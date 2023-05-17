@@ -1,38 +1,216 @@
-.App {
-  text-align: center;
+body {
+    margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+    margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.todoapp {
+    width: 500px;
+    background: #fff;
+    margin: 130px auto;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.todo-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-list li {
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ------------------------------------------------------ */
+
+input[type="checkbox"] {
+   transform: scale(1.7);
+}
+
+.todo-list .toggle {
+    margin-left: 10px;
+    margin-right: 20px;
+    border-color: grey;
+}
+
+/* ------------------------------------------------------- */
+.todo-list li {
+    position: relative;
+    font-size: 24px;
+    border: none;
+}
+
+.todo-list li .destroy {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    font-size: 30px;
+    color: #cc9a9a;
+    margin-bottom: 11px;
+    transition: color 0.2s ease-out;
+}
+
+.todo-list li:hover .destroy {
+    display: block;
+}
+
+.todo-list li .destroy:after {
+    content: '×';
+}
+
+.view {
+    padding: 10px 10px 10px 0px;
+    border: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.todo-list li .edit {
+    display: none;
+}
+
+.body .add-bar {
+    display: flex;
+}
+
+.body .add-bar .add-details {
+    color: white;
+    background-color: rgb(13,110,253);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.new-todo,
+.edit {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
+    border: 0;
+    color: inherit;
+    padding: 6px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.new-todo {
+    padding: 10px 10px 10px 10px;
+    border: solid, grey;
+    border-radius: 5px;
+    margin: auto;
+    margin-right: 30px;
+}
+
+.todoapp h1 {
+    position: absolute;
+    top: -130px;
+    width: 100%;
+    font-size: 50px;
+    font-weight: 50;
+    text-align: center;
+    color: rgb(56, 72, 75);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #e6e6e6;
+}
+
+.featurebar {
+    color: #777;
+    padding: 15px 15px;
+}
+
+.filters {
+    border-bottom: solid 1px rgb(168, 165, 165);
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.filters li {
+    margin-right: 50px;
+}
+
+.clear-task,
+html .clear-task:active {
+    float: right;
+    position: relative;
+    line-height: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: red;
+    padding: 10px 15px;
+    margin-top: 50px;
+    color: white;
+}
+
+.filters li a.selected {
+    padding-bottom: 14px;
+    border-bottom: 3px solid rgb(13,110,253);
+}
+
+.filters li a {
+    color: inherit;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+}
+
+.filters li {
+    display: inline;
+}
+
+.todo-list li.editing:last-child {
+    margin-bottom: -1px;
+}
+
+.todo-list li.editing {
+    border-bottom: none;
+    padding: 0;
+}
+
+.todo-list li.editing .edit {
+    display: block;
+    width: 90%;
+    padding: 12px 16px;
+    margin: 0 0 0 10%;
+}
+
+.todo-list li.completed label {
+    color: #868686;
+    text-decoration: line-through;
 }
